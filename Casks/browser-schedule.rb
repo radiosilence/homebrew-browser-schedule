@@ -1,6 +1,6 @@
 cask "browser-schedule" do
-  version "1.3.1"
-  sha256 "3398719033275780e046c617ea743a0780990b89fcc1e228ce7b40445a5322a5"
+  version "1.3.2"
+  sha256 "a34f5f4d0c668138334b9592c7e7e1c16bb62daa0278cb76070adec9189b74d6"
 
   url "https://github.com/radiosilence/browser-schedule/releases/download/v#{version}/BrowserSchedule.dmg"
   name "BrowserSchedule"
@@ -14,11 +14,6 @@ cask "browser-schedule" do
   postflight do
     system_command "/usr/bin/xattr",
                    args: ["-cr", "#{appdir}/BrowserSchedule.app"]
-  end
-
-  uninstall_postflight do
-    system_command "/usr/bin/open",
-                   args: ["x-apple.systempreferences:com.apple.preference.dock"]
   end
 
   zap trash: [
