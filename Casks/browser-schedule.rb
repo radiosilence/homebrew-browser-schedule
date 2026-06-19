@@ -7,7 +7,7 @@ cask "browser-schedule" do
   desc "Automatic browser switching based on time, day, and URL patterns"
   homepage "https://github.com/radiosilence/browser-schedule"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "BrowserSchedule.app"
 
