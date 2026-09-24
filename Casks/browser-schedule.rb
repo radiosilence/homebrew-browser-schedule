@@ -11,12 +11,12 @@ cask "browser-schedule" do
 
   app "BrowserSchedule.app"
 
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/BrowserSchedule.app"]
+  postflight_steps do
+    run "/usr/bin/xattr",
+        args:           ["-cr", "{{appdir}}/BrowserSchedule.app"],
+        writable_paths: ["BrowserSchedule.app"],
+        writable_base:  :appdir
   end
 
-  zap trash: [
-    "~/.config/browser-schedule",
-  ]
+  zap trash: "~/.config/browser-schedule"
 end
