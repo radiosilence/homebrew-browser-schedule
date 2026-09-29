@@ -1,6 +1,6 @@
 cask "browser-schedule" do
-  version "1.3.2"
-  sha256 "a34f5f4d0c668138334b9592c7e7e1c16bb62daa0278cb76070adec9189b74d6"
+  version "1.3.3"
+  sha256 "50d935290bedea731e6797834b91c26ab59f2ea05ab039f62987e339a4192997"
 
   url "https://github.com/radiosilence/browser-schedule/releases/download/v#{version}/BrowserSchedule.dmg"
   name "BrowserSchedule"
@@ -10,13 +10,6 @@ cask "browser-schedule" do
   depends_on macos: :sonoma
 
   app "BrowserSchedule.app"
-
-  postflight_steps do
-    run "/usr/bin/xattr",
-        args:           ["-cr", "{{appdir}}/BrowserSchedule.app"],
-        writable_paths: ["BrowserSchedule.app"],
-        writable_base:  :appdir
-  end
 
   zap trash: "~/.config/browser-schedule"
 end
